@@ -13,7 +13,7 @@ import YearView from './YearView'
 
 import assignDefined from './assignDefined'
 
-const bem = bemFactory('react-date-picker__history-view')
+import stylingFactory from './stylingFactory'
 
 const preventDefault = (e) => {
   e.preventDefault()
@@ -49,17 +49,16 @@ export default class HistoryView extends Component {
   }
 
   render() {
+    const styling = stylingFactory(
+      this.props.theme,
+      this.props.invertTheme
+    )
+
     const dateProps = prepareDateProps(this.props, this.state)
 
     const props = this.p = assign({}, this.props, dateProps)
 
     props.children = React.Children.toArray(props.children)
-
-    const className = join(
-      props.className,
-      bem(),
-      props.theme && bem(null, `theme-${props.theme}`)
-    )
 
     const commonProps = assignDefined({}, {
       locale: props.locale,
@@ -123,7 +122,7 @@ export default class HistoryView extends Component {
       column
       alignItems="stretch"
       {...flexProps}
-      className={className}
+      {...styling('historyView')}
     >
       {this.renderYearView(yearViewProps)}
       {this.renderDecadeView(decadeViewProps)}

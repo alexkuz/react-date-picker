@@ -10,7 +10,8 @@
     "lib": "rimraf lib && npm run babel",
     "babel": "babel --out-dir lib src",
     "build": "npm run styles && npm run lib",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "start": "npm run dev"
   },
   "contributors": [],
   "author": "ZippyUI <contact@zippyui.com>",
@@ -19,6 +20,7 @@
     "lodash.throttle": "^4.0.1",
     "object-assign": "4.0.1",
     "raf": "3.2.0",
+    "react-base16-styling": "^0.4.1",
     "react-class": "2.0.0",
     "react-field": "2.0.2",
     "react-flex": "2.2.7",
@@ -32,8 +34,6 @@
     "moment": ">=2.8.0"
   },
   "devDependencies": {
-    "react": ">=0.14.0 || >=15.0.0",
-    "react-dom": ">=0.14.0 || >=15.0.0",
     "autoprefixer-loader": "^3.2.0",
     "babel-cli": "^6.7.7",
     "babel-core": "^6.5.0",
@@ -47,8 +47,11 @@
     "file-loader": "^0.8.4",
     "json-loader": "^0.5.2",
     "mocha": "^2.2.4",
+    "moment": "^2.14.1",
     "node-libs-browser": "^0.5.2",
     "node-sass": "^3.5.3",
+    "react": ">=0.14.0 || >=15.0.0",
+    "react-dom": ">=0.14.0 || >=15.0.0",
     "react-hot-loader": "^1.2.8",
     "rimraf": "^2.5.2",
     "sass-loader": "^3.2.0",
